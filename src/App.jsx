@@ -72,7 +72,7 @@ function App() {
       localStorage.setItem("tasks", JSON.stringify(updatedTasks));
       toast.success("Task added successfully", {
         position: "top-right",
-        autoClose: 2000,
+        autoClose: 1000,
       });
     } else {
       alert("Please Enter Some Task");
@@ -100,6 +100,7 @@ function App() {
     );
     toast.error("Task removed successfully", {
       position: "top-right",
+      autoClose: 1000,
     });
   };
 
