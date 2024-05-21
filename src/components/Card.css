@@ -1,0 +1,80 @@
+.task {
+  margin-bottom: 8px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bin {
+  padding: 5px;
+  background-color: transparent;
+  color: #888;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.bin:hover {
+  color: red;
+}
+
+.checkbox {
+  margin-right: 10px;
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.title {
+  font-size: 18px;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.innerDiv {
+  display: flex;
+  gap: 5px;
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .task{
+    margin-bottom: 8px;
+    padding: 8px;
+  }
+
+  .checkbox{
+    width: 10px;
+  }
+
+  .title{
+    font-size: 14px;
+  }
+
+  .bin{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .task{
+    margin-bottom: 5px;
+    padding: 5px;
+  }
+
+  .checkbox{
+    width: 8px;
+  }
+
+  .title{
+    font-size: 12px;
+  }
+
+  .bin{
+    font-size: 12px;
+  }
+}

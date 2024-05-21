@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: rgba(140, 53, 202, 0.671);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin-top: 60px;
+}
+
+.container {
+  margin: 20px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.todo p{
+  font-size: 50px;
+}
+
+.todoImg {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  height: 50px;
+  width: 100%;
+  border: 2px solid #999;
+  border-radius: 5px;
+}
+
+.inputContainer input {
+  height: 100%;
+  width: 100%;
+  padding: 2px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+}
+
+.menuBar {
+  width: 40px;
+  opacity: 0.6;
+}
+
+.addList {
+  font-size: 20px;
+  color: #fff;
+  background-color: rgba(140, 53, 202, 0.671);
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.addList:hover {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+#added {
+  color: green;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 10px;
+  right: 5%;
+  top: 5%;
+  opacity: 0;
+  padding: 10px;
+  font-size: 20px;
+}
+
+#removed {
+  color: red;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 10px;
+  right: 5%;
+  top: 5%;
+  opacity: 0;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.status {
+  display: flex;
+  gap: 100px;
+  border-bottom: 1px solid #999;
+  padding-bottom: 10px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.filters {
+  display: flex;
+  gap: 20px;
+}
+
+.filters p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.filters p:hover {
+  cursor: pointer;
+}
+
+.clearBtn {
+  color: #fff;
+  background-color: rgba(140, 53, 202, 0.671);
+  border: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.clearBtn:hover {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.tasks{
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.item-added-animation {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Media Queries */
+@media (max-width: 480px) {
+  .container{
+    width: 330px;
+    gap: 10px;
+  }
+  .todo p{
+    font-size: 18px;
+  }
+  .todoImg{
+    width: 25px;
+    height: 25px;
+  }
+  .inputContainer{
+    height: 30px;
+  }
+  .inputContainer input{
+    font-size: 12px;
+  }
+
+  .status{
+    gap: 5px;
+  }
+
+  .filters{
+    gap: 10px;
+  }
+
+  .filters p{
+    font-size: 12px;
+  }
+
+  .clearBtn{
+    font-size: 12px;
+    padding: 5px;
+  }
+  .addList{
+    font-size: 12px;
+  }
+
+  .menuBar{
+    width: 15px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .container{
+    width: 400px;
+  }
+  .todo p{
+    font-size: 25px;
+  }
+  .todoImg{
+    width: 35px;
+    height: 35px;
+  }
+  .inputContainer{
+    height: 45px;
+  }
+  .inputContainer input{
+    font-size: 20px;
+  }
+
+  .status{
+    gap: 5px;
+  }
+
+  .filters{
+    gap: 10px;
+  }
+
+  .filters p{
+    font-size: 15px;
+  }
+
+  .clearBtn{
+    font-size: 15px;
+    padding: 5px;
+  }
+  .addList{
+    font-size: 15px;
+  }
+
+  .menuBar{
+    width: 20px;
+  }
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    width: 500px;
+  }
+  .todo p{
+    font-size: 35px;
+  }
+  .todoImg{
+    width: 45px;
+    height: 45px;
+  }
+  .status{
+    gap: 50px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .container {
+    width: 600px;
+    margin: 15px;
+  }
+  .todo{
+    gap: 15px;
+  }
+  .todo p{
+    font-size: 40px;
+  }
+  .todoImg{
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
