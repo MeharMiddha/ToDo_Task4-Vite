@@ -1,24 +1,33 @@
 import React from "react";
-import "@fortawesome/fontawesome-free/css/all.css";
-import "./Card.css";
+import todoHandlers from "../hooks/todoHandler";
+import Card from "./TodoElement";
 
-function Card({ taskId, taskTitle, onRemove, isCompleted, onToggleComplete }) {
-  return (
-    <div className="task">
-      <div className="innerDiv">
-        <input
-          type="checkbox"
-          className="checkbox"
-          checked={isCompleted}
-          onChange={() => onToggleComplete(taskId)}
-        />
-        <p className={isCompleted ? "title completed" : "title"}>{taskTitle}</p>
-      </div>
-      <button className="bin" onClick={() => onRemove(taskId)}>
-        <i className="fa-solid fa-trash"></i>
-      </button>
-    </div>
-  );
+const CardContainer=()=>{
+  const {
+    state,
+    handleRemoveTask,
+    handleToggleComplete,
+  } = todoHandlers();
+  return(
+    <>
+    {state.isLoading ? (
+      <p>Loading Tasks...</p>
+    ) : (
+      <ul className="tasks">
+        {state.tasks.map((task, index) => (
+          <Card
+            key={index}
+            taskId={index}
+            taskTitle={task.title}
+            onRemove={handleRemoveTask}
+            isCompleted={task.completed}
+            onToggleComplete={handleToggleComplete}
+          />
+        ))}
+      </ul>
+    )}
+    </>
+  )
 }
 
-export default Card;
+export default CardContainer;
