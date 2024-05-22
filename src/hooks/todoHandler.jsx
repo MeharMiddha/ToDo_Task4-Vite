@@ -47,7 +47,6 @@ const todoHandlers = () => {
   const handleAddTask = () => {
     if (state.taskInput !== "") {
       const newTask = {
-        id: state.tasks.length + 1,
         title: state.taskInput,
         completed: false,
       };
